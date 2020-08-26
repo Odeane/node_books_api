@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const booksController = require('../controllers/booksController')
+
 
 /* GET users listing. */
-router.get('/', (req, res) => {
-  res.json({ books: [{ title: 'The eagle that walk.' }] });
-});
-
+router.get('/', booksController.index);
+router.get('/:id', booksController.show)
 module.exports = router;
